@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+@font-face {
+	font-family: bento;
+	src: url("/Assets/bento.otf");
+}
+@font-face {
+	font-family: bloomberg;
+	src: url("/Assets/bloomberg.otf");
+}
+
+* {
+	box-sizing: border-box;
+	--orange: #ff5100;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	cursor: url("/Assets/shuriken.svg"), auto;
+	scroll-behavior: smooth;
+	user-drag: none;
+	-webkit-user-drag: none;
+}
+
+body {
+	background-color: rgb(224, 224, 224);
+}
+
+ul {
+	visibility: hidden;
+	height: 100%;
+	background: linear-gradient(90deg, #ff0066, #2850ff);
+	padding: 15px 0px;
+	margin: auto;
+	display: flex;
+	list-style: none;
+	font-size: 1.5em;
+}
+
+a {
+	-webkit-user-drag: none;
+	display: inline;
+	text-decoration: none;
+	padding: 16px 15px;
+	transition: all 0.2s ease-in-out;
+	color: #ffffff;
+	text-transform: uppercase;
+	background-color: rgb(24, 24, 24);
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	cursor: inherit;
+}
+
+ul li a:hover {
+	padding: 10px 15px;
+}
+
+section {
+	padding: 12px;
+	color: rgb(216, 216, 216);
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	padding: 7px;
+	background-color: rgb(24, 24, 24);
+}
+
+.icon {
+	position: absolute;
+	height: 55px;
+	border: 2px solid white;
+	border-radius: 50%;
+	padding: 2px;
+}
+
+.icon path {
+	fill: white;
+}
+
+.icon:hover {
+	scale: 1.2;
+	background: linear-gradient(270deg, #ff0000, #ff9100);
+	animation: 1s iconAnimation2 linear infinite;
+}
+
+#home {
+	background-image: url("/Assets/bg.jpg");
+	display: flex;
+	height: 100vh;
+	background-attachment: fixed;
+	flex-direction: column;
+}
+
+#home h1 {
+	background: -webkit-linear-gradient(270deg, #ff0000, #ff9100);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: var(--orange);
+	font-family: "bento", "Cinzel", serif;
+	letter-spacing: 5px;
+	font-size: 2.5rem;
+}
+
+.content {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.crop {
+	height: 350px;
+	position: relative;
+	top: -30px;
+	width: 15vw;
+}
+
+.gif {
+	height: 100%;
+	position: relative;
+	right: -75px;
+}
+
+.initial {
+	content: url("/Assets/long-punch.png");
+	right: 0;
+	margin-top: 25px;
+}
+
+.animateBounce {
+	animation: 1.5s bounceHorizontal 1.1s;
+}
+
+.description {
+	position: relative;
+	font-family: "bloomberg", cursive;
+	font-size: 2rem;
+	padding: 0 15px;
+}
+
+.carousel {
+	border: 2px solid red;
+	padding: 0;
+	height: 500px;
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.carousel .container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	/* align-items: center;
+	justify-content: center; */
+}
+.carousel .container img {
+	height: 100%;
+	margin: 0 15px;
+}
+
+@keyframes iconAnimation2 {
+	to {
+		rotate: 360deg;
+	}
+}
+
+@keyframes iconAnimation {
+	from {
+		rotate: 0deg;
+		scale: 1.2;
+		background: linear-gradient(270deg, #ff0000, #ff9100);
+	}
+	to {
+		rotate: 360deg;
+		scale: 1.2;
+		background: linear-gradient(270deg, #ff0000, #ff9100);
+	}
+}
+
+@keyframes iconThrow {
+	from {
+		left: 0%;
+	}
+	to {
+		left: calc(100% - 112px);
+	}
+}
+
+@keyframes fall {
+	to {
+		rotate: 90deg;
+	}
+}
+
+@keyframes visible {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes bounceHorizontal {
+	0% {
+		left: 0;
+		animation-timing-function: cubic-bezier(0.5, 0.21, 0.92, 0.85);
+	}
+	50% {
+		left: 45%;
+		/* animation-timing-function: ease-out; */
+	}
+	100% {
+		left: 0;
+		animation-timing-function: cubic-bezier(0.07, 0.67, 0.52, 0.73);
+	}
+}
