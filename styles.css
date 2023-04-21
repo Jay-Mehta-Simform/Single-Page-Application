@@ -547,12 +547,15 @@ ul li a:hover {
 
 @media screen and (max-width: 900px) {
 	.icon,
-	.pin,
 	.leftArrow,
 	.rightArrow {
 		height: 48px;
 	}
+	.pin {
+		width: 48px;
+	}
 	ul {
+		margin: 0px;
 		padding: 9.8px 0px;
 	}
 	.navbar a {
@@ -582,14 +585,22 @@ ul li a:hover {
 		padding: 9.4px 0px;
 	}
 
+	ul li a:hover {
+		padding: 6px 10px;
+	}
+
 	.gifWrapper {
 		height: 25vh;
 	}
 
-	.icon,
-	.pin {
+	.icon {
 		height: 40px;
 	}
+
+	.pin {
+		width: 40px;
+	}
+
 	.container img {
 		width: calc(100% / 1);
 	}
@@ -605,6 +616,28 @@ ul li a:hover {
 }
 
 @media screen and (max-width: 559px) {
+	* {
+		font-size: 10px;
+	}
+
+	.navbar a {
+		padding: 10px 5px;
+	}
+
+	ul li a:hover {
+		padding: 6px 5px;
+	}
+
+	.icon,
+	.leftArrow,
+	.rightArrow {
+		height: 36px;
+	}
+
+	.pin {
+		width: 36px;
+	}
+
 	.comment .user h1 {
 		font-size: 1rem;
 	}
