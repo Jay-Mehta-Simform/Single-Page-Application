@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
-
 @font-face {
 	font-family: bento;
 	src: url("/Assets/bento.otf");
@@ -26,7 +24,6 @@
 	padding: 0;
 	user-select: none;
 	cursor: url("/Assets/shuriken.svg"), auto;
-	/* scroll-behavior: smooth; */
 	user-drag: none;
 	-webkit-user-drag: none;
 	scroll-margin: 100px;
@@ -35,8 +32,8 @@
 body {
 	background-color: rgb(224, 224, 224);
 	overflow-x: hidden;
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 main {
 	height: 92.3vh;
@@ -68,7 +65,6 @@ ul {
 
 section {
 	padding: 12px;
-	/* color: rgb(216, 216, 216); */
 	color: rgb(0, 0, 0);
 }
 
@@ -91,16 +87,21 @@ ul li a:hover {
 	padding: 10px 15px;
 }
 
+.navigators {
+	position: relative;
+	left: 36px;
+}
+
 .navbar {
-	/* height: 7.7vh; */
 	position: sticky;
 	top: 0;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	padding: 7px;
 	background-color: rgb(24, 24, 24);
 	overflow: hidden;
-	z-index: 100000;
+	z-index: 10;
 }
 
 .icon {
@@ -109,6 +110,7 @@ ul li a:hover {
 	border: 2px solid white;
 	border-radius: 50%;
 	padding: 2px;
+	left: 10px;
 }
 
 .icon path {
@@ -129,6 +131,7 @@ ul li a:hover {
 	background-image: url("/Assets/bg5.jpg");
 	display: flex;
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
 	flex-direction: column;
 	/* background-attachment: fixed; */
@@ -302,6 +305,8 @@ ul li a:hover {
 
 .leftArrow,
 .rightArrow {
+	width: 78px;
+	height: 78px;
 	position: absolute;
 	font-size: 0;
 	top: 40%;
@@ -345,14 +350,18 @@ ul li a:hover {
 
 .cardsContainer {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	flex-wrap: wrap;
-	/* height: 100%; */
+	/* padding-left: 50px; */
 	position: relative;
 }
 #trending::-webkit-scrollbar {
 	display: none;
+}
+
+.firstColumn.cardActive {
+	transform-origin: 0% -10%;
 }
 
 .card {
@@ -400,15 +409,9 @@ ul li a:hover {
 .cardActive {
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
 		rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-	transform-origin: 50% -10%;
+	transform-origin: 80% -10%;
 	transform: scale(1.8) rotateY(360deg);
 	z-index: 1;
-}
-
-@media screen and (max-width: 700px) {
-	* {
-		font-size: 12px;
-	}
 }
 
 #commentSection {
@@ -416,10 +419,10 @@ ul li a:hover {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding-top: 25px;
+	padding-top: 5px;
 }
 
-#commentSection h1 {
+#commentSection > h1 {
 	position: relative;
 	left: calc(75px - 40%);
 	background: -webkit-linear-gradient(270deg, #ff0000, #ff9100);
@@ -436,11 +439,179 @@ ul li a:hover {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	padding: 15px;
 }
-
-.commentBox input {
+.userComment {
 	height: 25%;
+}
+
+.userComment textarea {
+	background-color: #000000;
+	border-radius: 5px;
+	color: white;
+	font-size: 1.5em;
 	width: 100%;
+	height: 70%;
+	padding: 15px;
+	resize: none;
 	border: none;
 	outline: none;
-	padding: 15px;
+}
+
+.userComment .user {
+	height: 30%;
+	padding-bottom: 2px;
+}
+
+.userWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.userWrapper button {
+	background-color: #2850ff;
+	color: white;
+	border: none;
+	border-radius: 15px;
+	padding: 12px;
+	font-size: 1.2em;
+	margin-bottom: 2px;
+}
+
+.userWrapper button:active {
+	transform: scale(0.9);
+}
+
+.user {
+	display: flex;
+	align-items: center;
+}
+
+.user h1 {
+	background: -webkit-linear-gradient(270deg, #ff0000, #ff9100);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: var(--orange);
+	font-size: 1.5em;
+	white-space: nowrap;
+	padding: 10px;
+}
+
+.user img {
+	height: 48px;
+	width: 48px;
+}
+
+.history {
+	overflow-y: scroll;
+	margin-top: 5px;
+	background-color: #797979;
+	border-radius: 5px;
+	height: 75%;
+	width: 100%;
+	padding: 4vh 2vw;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.history::-webkit-scrollbar {
+	display: none;
+}
+
+.history .user {
+	padding: 15px 0;
+}
+
+.commentBody {
+	word-break: break-all;
+}
+
+.comment {
+	border-radius: 5px;
+	padding: 0 5px;
+	margin: 5px 0;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	height: fit-content;
+}
+
+.history .user h1 {
+	font-size: 1.2em;
+}
+
+.history .user img {
+	height: 36px;
+	width: 36px;
+}
+
+@media screen and (max-width: 900px) {
+	.icon,
+	.pin,
+	.leftArrow,
+	.rightArrow {
+		height: 48px;
+	}
+	ul {
+		padding: 9.8px 0px;
+	}
+	.navbar a {
+		padding: 10px;
+	}
+	ul li a:hover {
+		padding: 6px 10px;
+	}
+
+	.gifWrapper {
+		height: 30vh;
+	}
+
+	#new h1 {
+		font-size: 2.5rem;
+	}
+	.container img {
+		width: calc(100% / 2);
+	}
+}
+@media screen and (max-width: 750px) {
+	* {
+		font-size: 16px;
+	}
+
+	ul {
+		padding: 9.4px 0px;
+	}
+
+	.gifWrapper {
+		height: 25vh;
+	}
+
+	.icon,
+	.pin {
+		height: 40px;
+	}
+	.container img {
+		width: calc(100% / 1);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.cardActive {
+		transform-origin: 100% -10%;
+	}
+	.firstColumn.cardActive {
+		transform-origin: 0% -10%;
+	}
+}
+
+@media screen and (max-width: 559px) {
+	.comment .user h1 {
+		font-size: 1rem;
+	}
+	.cardActive {
+		transform-origin: 0% -10%;
+	}
+	.firstColumn.cardActive {
+		transform-origin: 50% -10%;
+	}
 }

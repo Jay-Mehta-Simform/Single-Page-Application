@@ -50,10 +50,10 @@
 			</g>
 		</svg>
 		<ul class="navigators">
-			<li><a href="#home">Home</a></li>
-			<li><a href="#new">New-Releases</a></li>
-			<li><a href="#trending">Trending</a></li>
-			<li><a href="#commentSection">Comments</a></li>
+			<li><a tabindex="-1" href="#home">Home</a></li>
+			<li><a tabindex="-1" href="#new">New-Releases</a></li>
+			<li><a tabindex="-1" href="#trending">Trending</a></li>
+			<li><a tabindex="-1" href="#commentSection">Comments</a></li>
 		</ul>
 		<svg class="pin" fill="#ffffff" width="71px" height="71px" viewBox="-10.56 -10.56 53.12 53.12"
 			xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="rotate(0)">
@@ -85,8 +85,8 @@
 		<section id="new">
 			<h1>New Releases</h1>
 			<div class="carousel">
-				<svg class="leftArrow" width="78px" height="78px" viewBox="0 0 1024 1024"
-					xmlns="http://www.w3.org/2000/svg" fill="#ffffff" transform="matrix(-1, 0, 0, 1, 0, 0)">
+				<svg class="leftArrow" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"
+					transform="matrix(-1, 0, 0, 1, 0, 0)">
 					<g id="SVGRepo_bgCarrier" stroke-width="0" />
 
 					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
@@ -190,7 +190,46 @@
 		<section id="commentSection">
 			<h1>Comments</h1>
 			<div class="commentBox">
-				<input type="text">
+				<div class="userComment">
+					<div class="userWrapper">
+						<div class="user">
+							<img src="/Assets/user.svg" alt="">
+							<h1>Jay Mehta</h1>
+						</div>
+						<button>Comment</button>
+					</div>
+					<textarea placeholder="Enter Comment Here"></textarea>
+
+				</div>
+				<div class="history">
+					<div class="comment">
+						<div class="user">
+							<img src="/Assets/user.svg" alt="">
+							<h1>Bhagwanji Nakum : </h1>
+						</div>
+						<div class="commentBody">
+							Chai Lav Re Baba!
+						</div>
+					</div>
+					<div class="comment">
+						<div class="user">
+							<img src="/Assets/user.svg" alt="">
+							<h1>Hardik Makwana : </h1>
+						</div>
+						<div class="commentBody">
+							Tera chai to mai pi jaunga re baba ;)
+						</div>
+					</div>
+					<div class="comment">
+						<div class="user">
+							<img src="/Assets/user.svg" alt="">
+							<h1>Sahil Mistry : </h1>
+						</div>
+						<div class="commentBody">
+							Coffee acha hai re chai se (-_-)
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
